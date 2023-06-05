@@ -1,0 +1,153 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #ee4d2d;
+    --border-color: #dbdbdb;
+    --header-height: 120px;
+    --navbar-height: 40px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --sort-bar-height: 46px
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.gird__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.grid__column-2 {
+    width: 16.67%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.grid__column-2-5 {
+    width: 20%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.grid__column-10 {
+    width: 83.33%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+    animation: fadeIn 0.2s linear;
+}
+
+#register {
+    display: none;
+}
+
+#login {
+    display: none;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body {
+    --growth-from: 0.8;
+    --growth-to: 1;
+    margin: auto;
+    position: relative;
+    animation: growth 0.2s linear;
+}
+
+.btn {
+    min-width: 142px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--disabled {
+    cursor: default;
+    color: #949494;
+}
+
+.pagnation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+
+
+.pagination-item {
+    margin: 0 12px;
+}
+
+.pagniation-item-link {
+    --height: 30px;
+    text-decoration: none;
+    color: #939393;
+    font-size: 2rem;
+    min-width: 40px;
+    height: var(--height);
+    display: block;
+    line-height: var(--height);
+    text-align: center;
+    border-radius: 2px;
+    font-weight: 300;
+}
+
+.pagniation-item-active .pagniation-item-link {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.pagniation-item-active .pagniation-item-link:hover {
+    filter: brightness(80%);
+}
